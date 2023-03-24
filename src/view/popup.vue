@@ -1,6 +1,6 @@
 <template>
   <div class="main_app">
-    <span class="words" >{{ words }}</span>
+    <span class="words" v-for="word in words" :key="word">{{ word }}</span>
     <button></button>
   </div>
 </template>
