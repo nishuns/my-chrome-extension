@@ -1,7 +1,7 @@
 <template>
   <div class="main_app">
-    <span class="words" v-for="word in words" :key="word">{{ word }}</span>
-    <button></button>
+    <!-- <h1 class="alert" v-if="words && words.length <= 0">No available words</h1> -->
+    <span class="words" v-for="word in words" :key="word" @click="deleteWord(word)">{{ word }}</span>
   </div>
 </template>
 
@@ -25,6 +25,9 @@ export default {
           clearInterval(myInterval);
         }
       }, 500);
+    },
+    deleteWord(word) {
+      this.$store.dispatch('trashWord', word);
     }
   },
   computed: {
@@ -49,13 +52,15 @@ export default {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .words {
-      color: black;
-    font-size: 1rem;
+    color: black;
+    font-size: .8rem;
     background: #8be38b;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    margin: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    margin: 0.2rem;
+    box-shadow: 0px 0px 4px 1px #979292;
 }
 </style>

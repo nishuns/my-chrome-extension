@@ -5,7 +5,7 @@ import actions from './actions';
 
 const store = createStore({
     state: {
-        wordbin: ["hello", "hola"],
+        wordbin: [],
     },
     mutations,
     actions,

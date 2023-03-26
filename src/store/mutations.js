@@ -3,5 +3,9 @@ export default {
         const tempWordbin = [...state.wordbin];
         tempWordbin.push(newWord);
         state.wordbin = tempWordbin;
+    },
+    TRASH_WORD_FROM_WORDBIN(state, newWord) {
+        const tempWordbin = state.wordbin.filter((word) => word !== newWord);
+        state.wordbin = tempWordbin;
     }
 }
